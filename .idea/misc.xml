@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Meus Arquivos/Meus Projetos/FakeLibrary/app/src/main/res/layout/activity_main.xml" value="0.1824074074074074" />
+        <entry key="..\:/Meus Arquivos/Meus Projetos/FakeLibrary/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Meus Arquivos/Meus Projetos/FakeLibrary/app/src/main/res/layout/fake_book_adapter.xml" value="0.20416666666666666" />
+        <entry key="..\:/Meus Arquivos/Meus Projetos/FakeLibrary/app/src/main/res/layout/list_book_items.xml" value="0.25" />
       </map>
     </option>
   </component>
