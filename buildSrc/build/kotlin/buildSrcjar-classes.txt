@@ -1,0 +1,1 @@
+D:\Meus Arquivos\Meus Projetos\FakeLibrary\buildSrc\build\classes\kotlin\main\ConfigData.class;D:\Meus Arquivos\Meus Projetos\FakeLibrary\buildSrc\build\classes\kotlin\main\Dependencies.class
