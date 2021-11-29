@@ -1,12 +1,12 @@
 package br.com.fakelibrary.presentation.ui
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.fakelibrary.data.repository.FakeBookRepository
 import br.com.fakelibrary.domain.Status
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 /**
@@ -15,8 +15,8 @@ import kotlinx.coroutines.launch
  */
 class FakeLibraryViewModel(private val fakeBookRepository: FakeBookRepository):ViewModel() {
 
-    private val _state = MutableStateFlow<FakeBookStates>(FakeBookStates.Empty)
-    val state: StateFlow<FakeBookStates> = _state
+    private val _state = MutableLiveData<FakeBookStates>()
+    val state:LiveData<FakeBookStates> get() = _state
 
     private fun emit(value: FakeBookStates) {
         _state.value = value
@@ -44,6 +44,5 @@ class FakeLibraryViewModel(private val fakeBookRepository: FakeBookRepository):V
     sealed class FakeBookStates {
         class Sucess(val response: Status?) : FakeBookStates()
         class Error(val message: String) : FakeBookStates()
-        object Empty : FakeBookStates()
     }
 }

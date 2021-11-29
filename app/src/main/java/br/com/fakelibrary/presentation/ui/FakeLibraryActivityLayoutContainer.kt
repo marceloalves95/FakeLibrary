@@ -6,7 +6,6 @@ import br.com.fakelibrary.core.extensions.toast
 import br.com.fakelibrary.databinding.ActivityMainBinding
 import br.com.fakelibrary.presentation.adapter.FakeBookAdapter
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.coroutines.flow.collect
 
 /**
  * @author RubioAlves
@@ -16,23 +15,22 @@ class FakeLibraryActivityLayoutContainer(
     override val containerView: View,
     private val binding: ActivityMainBinding,
     private val viewModel: FakeLibraryViewModel,
-    private var fakeBookAdapter: FakeBookAdapter):LayoutContainer{
+    private var fakeBookAdapter: FakeBookAdapter,
+    private val activity:FakeLibraryActivity):LayoutContainer{
 
     private fun initLayout() = with(binding){
-
         with(rvFakeBooks){
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = fakeBookAdapter
             setHasFixedSize(true)
         }
-
     }
-    suspend fun initViewModel(){
+
+    fun initViewModel(){
         viewModel.getQuantityFakeBook(1)
-        viewModel.state.collect { states->
+        viewModel.state.observe(activity){ states->
             with(states){
                 when(this){
-                    FakeLibraryViewModel.FakeBookStates.Empty -> {}
                     is FakeLibraryViewModel.FakeBookStates.Error -> {
                         message.toast(containerView.context)
                     }
