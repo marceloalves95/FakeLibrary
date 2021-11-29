@@ -4,6 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.fakelibrary.core.extensions.toast
 import br.com.fakelibrary.databinding.ActivityMainBinding
+import br.com.fakelibrary.presentation.adapter.FakeBookAdapter
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.coroutines.flow.collect
 
@@ -17,7 +18,7 @@ class FakeLibraryActivityLayoutContainer(
     private val viewModel: FakeLibraryViewModel,
     private var fakeBookAdapter: FakeBookAdapter):LayoutContainer{
 
-    fun initLayout() = with(binding){
+    private fun initLayout() = with(binding){
 
         with(rvFakeBooks){
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
@@ -38,12 +39,11 @@ class FakeLibraryActivityLayoutContainer(
                     is FakeLibraryViewModel.FakeBookStates.Sucess -> {
                         response?.let { datas->
                             fakeBookAdapter = FakeBookAdapter(datas.data)
-                            binding.rvFakeBooks.adapter = fakeBookAdapter
+                            initLayout()
                         }
                     }
                 }
             }
-
         }
     }
 }
