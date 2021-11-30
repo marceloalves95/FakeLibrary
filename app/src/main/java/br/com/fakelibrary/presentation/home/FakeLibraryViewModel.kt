@@ -1,11 +1,11 @@
-package br.com.fakelibrary.presentation.ui
+package br.com.fakelibrary.presentation.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.fakelibrary.data.repository.FakeBookRepository
-import br.com.fakelibrary.domain.Status
+import br.com.fakelibrary.data.network.repository.FakeBookRepository
+import br.com.fakelibrary.presentation.home.model.FakeBookStates
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -33,16 +33,12 @@ class FakeLibraryViewModel(private val fakeBookRepository: FakeBookRepository):V
                         emit(FakeBookStates.Sucess(body()))
                     } else {
                         emit(FakeBookStates.Error("Erro: ${code()}"))
+
                     }
                 }
             } catch (exception: Exception) {
                 emit(FakeBookStates.Error("Sem Internet"))
             }
         }
-    }
-
-    sealed class FakeBookStates {
-        class Sucess(val response: Status?) : FakeBookStates()
-        class Error(val message: String) : FakeBookStates()
     }
 }

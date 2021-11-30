@@ -1,6 +1,6 @@
-package br.com.fakelibrary.data.repository
+package br.com.fakelibrary.data.network.repository
 
-import br.com.fakelibrary.data.api.FakeBookApi
+import br.com.fakelibrary.data.network.api.FakeBookApi
 
 /**
  * @author RubioAlves

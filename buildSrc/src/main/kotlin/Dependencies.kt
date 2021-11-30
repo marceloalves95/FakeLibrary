@@ -13,6 +13,7 @@ object Dependencies {
 
     const val lifecycle_version="2.4.0"
 
+    const val facebook_shimmer_version="0.1.0@aar"
     const val retrofit_version="2.9.0"
     const val okhttp3_logging_interceptor= "5.0.0-alpha.3"
     const val glide_version="4.12.0"

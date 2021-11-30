@@ -1,7 +1,6 @@
-package br.com.fakelibrary.di
+package br.com.fakelibrary.presentation.di
 
-import br.com.fakelibrary.data.repository.FakeBookRepository
-import br.com.fakelibrary.presentation.ui.FakeLibraryViewModel
+import br.com.fakelibrary.presentation.home.FakeLibraryViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module
@@ -17,9 +16,6 @@ object DataModule {
     }
     private fun appModule(): Module {
         return module {
-            single {
-                FakeBookRepository(get())
-            }
             viewModel {
                 FakeLibraryViewModel(get())
             }

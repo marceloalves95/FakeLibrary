@@ -1,4 +1,4 @@
-package br.com.fakelibrary.presentation.adapter
+package br.com.fakelibrary.presentation.home.adapter
 
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView

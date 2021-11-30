@@ -1,8 +1,8 @@
 package br.com.fakelibrary.core
 
 import android.app.Application
-import br.com.fakelibrary.di.DataModule
-import br.com.fakelibrary.di.NetworkModule
+import br.com.fakelibrary.presentation.di.DataModule
+import br.com.fakelibrary.data.di.NetworkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

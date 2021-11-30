@@ -52,6 +52,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${Dependencies.lifecycle_version}")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:${Dependencies.lifecycle_version}")
 
+    //Facebook Shimmer
+    implementation("com.facebook.shimmer:shimmer:${Dependencies.facebook_shimmer_version}")
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:${Dependencies.retrofit_version}")
     implementation("com.squareup.retrofit2:converter-gson:${Dependencies.retrofit_version}")

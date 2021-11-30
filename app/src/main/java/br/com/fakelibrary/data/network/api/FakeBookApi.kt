@@ -1,4 +1,4 @@
-package br.com.fakelibrary.data.api
+package br.com.fakelibrary.data.network.api
 
 import br.com.fakelibrary.domain.Status
 import retrofit2.Response

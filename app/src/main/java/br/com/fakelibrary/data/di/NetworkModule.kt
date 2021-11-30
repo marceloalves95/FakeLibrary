@@ -1,6 +1,7 @@
-package br.com.fakelibrary.di
+package br.com.fakelibrary.data.di
 
-import br.com.fakelibrary.data.api.FakeBookApi
+import br.com.fakelibrary.data.network.api.FakeBookApi
+import br.com.fakelibrary.data.network.repository.FakeBookRepository
 import br.com.fakelibrary.utils.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -21,6 +22,9 @@ object NetworkModule {
     }
     private fun networkModule():Module{
         return module {
+            single {
+                FakeBookRepository(get())
+            }
             single {
                 getService()
             }
