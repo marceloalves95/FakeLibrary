@@ -1,22 +1,22 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
-    id("kotlin-kapt")
-    id("kotlin-parcelize")
+    id(Plugins.android_application)
+    id(Plugins.kotlin_android)
+    id(Plugins.kotlin_kapt)
+    id(Plugins.kotlin_parcelize)
 }
 
 android {
 
-    compileSdk = ConfigData.compileSdkVersion
+    compileSdk = AppConfig.compileSdkVersion
 
     defaultConfig {
-        applicationId = "br.com.fakelibrary"
-        minSdk = ConfigData.minSdkVersion
-        targetSdk = ConfigData.targetSdkVersion
-        versionCode = ConfigData.versionCode
-        versionName = ConfigData.versionName
+        applicationId = AppConfig.applicationId
+        minSdk = AppConfig.minSdkVersion
+        targetSdk = AppConfig.targetSdkVersion
+        versionCode = AppConfig.versionCode
+        versionName = AppConfig.versionName
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = AppConfig.testInstrumentationRunner
 
     }
     buildTypes {
@@ -39,42 +39,42 @@ android {
 
 dependencies {
 
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${Dependencies.kotlin_version}")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Dependencies.kotlin_version}")
-    implementation("androidx.core:core-ktx:${Dependencies.core_ktx_version}")
-    implementation("androidx.appcompat:appcompat:${Dependencies.appcompat_version}")
-    implementation("com.google.android.material:material:${Dependencies.material_version}")
-    implementation("androidx.constraintlayout:constraintlayout:${Dependencies.constraint_layout_version}")
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:${Dependencies.swipe_refresh_layout_version}")
+    implementation(Dependencies.kotlin)
+    implementation(Dependencies.kotlinLib)
+    implementation(Dependencies.core_ktx)
+    implementation(Dependencies.appcompat)
+    implementation(Dependencies.material)
+    implementation(Dependencies.constraint_layout)
+    implementation(Dependencies.swipe_refresh_layout)
 
     //Lifecycle
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${Dependencies.lifecycle_version}")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${Dependencies.lifecycle_version}")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:${Dependencies.lifecycle_version}")
+    implementation(Dependencies.lifecycle_livedata)
+    implementation(Dependencies.lifecycle_viewmodel)
+    implementation(Dependencies.lifecycle_runtime)
 
     //Facebook Shimmer
-    implementation("com.facebook.shimmer:shimmer:${Dependencies.facebook_shimmer_version}")
+    implementation(Dependencies.facebook_shimmer)
     //Retrofit
-    implementation("com.squareup.retrofit2:retrofit:${Dependencies.retrofit_version}")
-    implementation("com.squareup.retrofit2:converter-gson:${Dependencies.retrofit_version}")
-    implementation("com.squareup.okhttp3:logging-interceptor:${Dependencies.okhttp3_logging_interceptor}")
+    implementation(Dependencies.retrofit)
+    implementation(Dependencies.converter_gson)
+    implementation(Dependencies.okhttp3_logging_interceptor)
 
     //Glide
-    kapt("com.github.bumptech.glide:compiler:${Dependencies.glide_version}")
-    implementation("com.github.bumptech.glide:glide:${Dependencies.glide_version}")
-    annotationProcessor("com.github.bumptech.glide:glide:${Dependencies.glide_version}")
+    kapt(Dependencies.glide_compiler)
+    implementation(Dependencies.glide)
+    annotationProcessor(Dependencies.glide)
 
     //Koin
-    implementation("io.insert-koin:koin-android:${Dependencies.koin_version}")
+    implementation(Dependencies.koin)
 
     //Mockk
-    testImplementation("io.mockk:mockk:${Dependencies.mockk_version}")
-    androidTestImplementation("io.mockk:mockk-android:${Dependencies.mockk_version}")
+    testImplementation(Dependencies.mockk)
+    androidTestImplementation(Dependencies.mockk_android)
 
     //Testes
-    testImplementation("junit:junit:${Dependencies.test_junit_version}")
-    testImplementation("io.insert-koin:koin-test:${Dependencies.koin_version}")
-    androidTestImplementation("androidx.test.ext:junit:${Dependencies.test_ext_junit_version}")
-    androidTestImplementation("androidx.test.espresso:espresso-core:${Dependencies.espresso_core_version}")
+    testImplementation(Dependencies.junit)
+    testImplementation(Dependencies.koin_test)
+    androidTestImplementation(Dependencies.ext_junit)
+    androidTestImplementation(Dependencies.espresso_core)
 
 }

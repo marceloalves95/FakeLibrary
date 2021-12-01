@@ -1,1 +1,1 @@
-D:\Meus Arquivos\Meus Projetos\FakeLibrary\buildSrc\build\classes\kotlin\main\ConfigData.class;D:\Meus Arquivos\Meus Projetos\FakeLibrary\buildSrc\build\classes\kotlin\main\Dependencies.class
+D:\Meus Arquivos\Meus Projetos\FakeLibrary\buildSrc\build\classes\kotlin\main\AppConfig.class;D:\Meus Arquivos\Meus Projetos\FakeLibrary\buildSrc\build\classes\kotlin\main\Dependencies.class;D:\Meus Arquivos\Meus Projetos\FakeLibrary\buildSrc\build\classes\kotlin\main\Plugins.class;D:\Meus Arquivos\Meus Projetos\FakeLibrary\buildSrc\build\classes\kotlin\main\Version.class
