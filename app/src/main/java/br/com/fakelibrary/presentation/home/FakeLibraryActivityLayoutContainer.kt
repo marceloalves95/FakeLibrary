@@ -2,7 +2,7 @@ package br.com.fakelibrary.presentation.home
 
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.fakelibrary.core.extensions.shimmerVisibility
+import br.com.fakelibrary.core.extensions.shimmerVisible
 import br.com.fakelibrary.core.extensions.toast
 import br.com.fakelibrary.databinding.ActivityMainBinding
 import br.com.fakelibrary.presentation.home.adapter.FakeBookAdapter
@@ -27,16 +27,24 @@ class FakeLibraryActivityLayoutContainer(
             adapter = fakeBookAdapter
             setHasFixedSize(true)
         }
+        with(swipeLayout){
+            setOnRefreshListener {
+                isRefreshing = false
+            }
+        }
     }
 
     fun initViewModel(){
-        viewModel.getQuantityFakeBook(1)
+        viewModel.getQuantityFakeBook()
         viewModel.state.observe(activity){ states->
             with(states){
                 when(this){
-                    is FakeBookStates.Error -> {
-                        message.toast(containerView.context)
-                        binding.shimmerFrameLayout.shimmerVisibility()
+                    is FakeBookStates.Loading ->{
+                        with(binding) {
+                            swipeLayout.apply {
+                                isRefreshing = isLoading
+                            }
+                        }
                     }
                     is FakeBookStates.Sucess -> {
                         response?.let { datas->
@@ -45,14 +53,17 @@ class FakeLibraryActivityLayoutContainer(
                             initLayout()
                         }
                     }
+                    is FakeBookStates.Error -> {
+                        message.toast(containerView.context)
+                        binding.shimmerFrameLayout.visibility = View.GONE
+                    }
                 }
             }
         }
     }
     private fun shimmerVisible(){
         binding.apply {
-            shimmerFrameLayout.stopShimmerAnimation()
-            shimmerFrameLayout.shimmerVisibility()
+            shimmerFrameLayout.shimmerVisible(false)
             rvFakeBooks.visibility = View.VISIBLE
         }
     }

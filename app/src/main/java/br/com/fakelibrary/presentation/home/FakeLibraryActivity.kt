@@ -28,16 +28,6 @@ class FakeLibraryActivity : AppCompatActivity() {
         initViewModel()
     }
 
-    override fun onResume() {
-        super.onResume()
-        binding.apply { shimmerFrameLayout.startShimmerAnimation() }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        binding.apply { shimmerFrameLayout.stopShimmerAnimation() }
-    }
-
     private fun initViewModel(){
         layoutContainer.initViewModel()
     }

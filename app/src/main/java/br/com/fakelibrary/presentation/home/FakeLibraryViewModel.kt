@@ -22,12 +22,13 @@ class FakeLibraryViewModel(private val fakeBookRepository: FakeBookRepository):V
         _state.value = value
     }
 
-    fun getQuantityFakeBook(quantity:Int){
+    fun getQuantityFakeBook(){
 
         viewModelScope.launch {
             try {
+                emit(FakeBookStates.Loading(true))
                 delay(1000)
-                val response = fakeBookRepository.getFakeBook(quantity)
+                val response = fakeBookRepository.getFakeBook()
                 with(response) {
                     if (isSuccessful) {
                         emit(FakeBookStates.Sucess(body()))
@@ -39,6 +40,7 @@ class FakeLibraryViewModel(private val fakeBookRepository: FakeBookRepository):V
             } catch (exception: Exception) {
                 emit(FakeBookStates.Error("Sem Internet"))
             }
+            emit(FakeBookStates.Loading(false))
         }
     }
 }

@@ -12,6 +12,6 @@ import retrofit2.http.Query
 interface FakeBookApi {
 
     @GET("/api/v1/books")
-    suspend fun getFakeBook(@Query("_quantity") _quantity:Int):Response<Status>
+    suspend fun getFakeBook():Response<Status>
 
 }

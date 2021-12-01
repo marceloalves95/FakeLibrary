@@ -4,41 +4,93 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
+    android:background="@color/colorGrey"
     android:layout_width="match_parent"
-    android:layout_height="60dp">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageViewAvatar"
-        android:layout_width="60dp"
-        android:layout_height="0dp"
-        android:background="@color/colorGrey"
-        android:padding="4dp"
-        tools:ignore="contentDescription"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvShimmerCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        app:contentPadding="2dp"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="6dp"
+        app:strokeWidth="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewUserName"
-        style="@style/TextAppearance.AppCompat.Large"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/colorGrey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewAvatar"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="MindOrks" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewUserEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorGrey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textViewUserName"
-        app:layout_constraintTop_toBottomOf="@+id/textViewUserName"
-        tools:text="MindOrks" />
+            <ImageView
+                android:id="@+id/ivShimmerImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/colorGrey"
+                tools:ignore="contentDescription" />
+
+            <TextView
+                android:id="@+id/tvShimmerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@color/colorGrey"
+                app:layout_constraintStart_toEndOf="@+id/ivShimmerImage"
+                app:layout_constraintTop_toTopOf="@+id/ivShimmerImage"
+                tools:text="Alice. 'I'm glad."/>
+
+            <TextView
+                android:id="@+id/tvShimmerAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorGrey"
+                app:layout_constraintStart_toStartOf="@+id/tvShimmerTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvShimmerTitle"
+                tools:text="Blanche Marks"/>
+
+            <TextView
+                android:id="@+id/tvShimmerGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorGrey"
+                app:layout_constraintStart_toStartOf="@+id/tvShimmerAuthor"
+                app:layout_constraintTop_toBottomOf="@+id/tvShimmerAuthor"
+                tools:text="Voluptas"/>
+
+            <TextView
+                android:id="@+id/tvShimmerPublished"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorGrey"
+                app:layout_constraintStart_toStartOf="@+id/tvShimmerGenre"
+                app:layout_constraintTop_toBottomOf="@+id/tvShimmerGenre"
+                tools:text="1970-02-14"/>
+
+            <TextView
+                android:id="@+id/tvShimmerPublisher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorGrey"
+                app:layout_constraintStart_toStartOf="@+id/tvShimmerPublished"
+                app:layout_constraintTop_toBottomOf="@+id/tvShimmerPublished"
+                tools:text="Doloremque Consequatur"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

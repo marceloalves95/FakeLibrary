@@ -3,6 +3,7 @@ package br.com.fakelibrary.core.extensions
 import android.content.Context
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import com.facebook.shimmer.ShimmerFrameLayout
 
 /**
@@ -12,6 +13,11 @@ import com.facebook.shimmer.ShimmerFrameLayout
 fun Any.toast(context: Context, duration: Int = Toast.LENGTH_SHORT): Toast {
     return Toast.makeText(context, this.toString(), duration).apply { show() }
 }
-fun ShimmerFrameLayout.shimmerVisibility(){
-    visibility = View.GONE
+fun ShimmerFrameLayout.shimmerVisible(isVisible:Boolean){
+    this.isVisible = isVisible
+    if (isVisible){
+        startShimmerAnimation()
+    }else{
+        stopShimmerAnimation()
+    }
 }

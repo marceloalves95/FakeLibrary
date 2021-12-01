@@ -7,5 +7,5 @@ import br.com.fakelibrary.data.network.api.FakeBookApi
  * Created 27/11/2021 at 17:46
  */
 class FakeBookRepository(private val fakeBookApi: FakeBookApi) {
-    suspend fun getFakeBook(quantity:Int) = fakeBookApi.getFakeBook(quantity)
+    suspend fun getFakeBook() = fakeBookApi.getFakeBook()
 }
