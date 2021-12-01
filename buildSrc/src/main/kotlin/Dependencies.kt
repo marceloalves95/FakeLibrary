@@ -5,7 +5,7 @@
 object Dependencies {
 
     const val gradle="com.android.tools.build:gradle:${Version.gradle_version}"
-    const val gradle_plugin="org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.gradle_plugin}"
+    const val gradle_plugin="org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.gradle_plugin_version}"
 
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Version.kotlin_version}"
     const val kotlinLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Version.kotlin_version}"
