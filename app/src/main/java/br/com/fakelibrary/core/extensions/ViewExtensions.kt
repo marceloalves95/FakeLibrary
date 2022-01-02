@@ -21,3 +21,6 @@ fun ShimmerFrameLayout.shimmerVisible(isVisible:Boolean){
         stopShimmerAnimation()
     }
 }
+fun View.visibility(visible:Int){
+    visibility = visible
+}

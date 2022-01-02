@@ -34,7 +34,6 @@ class FakeLibraryViewModel(private val fakeBookRepository: FakeBookRepository):V
                         emit(FakeBookStates.Sucess(body()))
                     } else {
                         emit(FakeBookStates.Error("Erro: ${code()}"))
-
                     }
                 }
             } catch (exception: Exception) {

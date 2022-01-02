@@ -62,7 +62,7 @@ dependencies {
     //Glide
     kapt(Dependencies.glide_compiler)
     implementation(Dependencies.glide)
-    annotationProcessor(Dependencies.glide)
+    kapt(Dependencies.glide)
 
     //Koin
     implementation(Dependencies.koin)

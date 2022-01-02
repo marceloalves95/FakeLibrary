@@ -4,6 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.fakelibrary.core.extensions.shimmerVisible
 import br.com.fakelibrary.core.extensions.toast
+import br.com.fakelibrary.core.extensions.visibility
 import br.com.fakelibrary.databinding.ActivityMainBinding
 import br.com.fakelibrary.presentation.home.adapter.FakeBookAdapter
 import br.com.fakelibrary.presentation.home.model.FakeBookStates
@@ -55,7 +56,7 @@ class FakeLibraryActivityLayoutContainer(
                     }
                     is FakeBookStates.Error -> {
                         message.toast(containerView.context)
-                        binding.shimmerFrameLayout.visibility = View.GONE
+                        binding.shimmerFrameLayout.visibility(View.GONE)
                     }
                 }
             }
@@ -64,7 +65,7 @@ class FakeLibraryActivityLayoutContainer(
     private fun shimmerVisible(){
         binding.apply {
             shimmerFrameLayout.shimmerVisible(false)
-            rvFakeBooks.visibility = View.VISIBLE
+            rvFakeBooks.visibility(View.VISIBLE)
         }
     }
 }
